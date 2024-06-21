@@ -1,0 +1,52 @@
+var studentService = require('./studentService');
+ 
+var createStudentControllerFn = async (req, res) =>
+{
+    try
+    {
+    console.log(req.body);
+    var status = await studentService.createStudentDBService(req.body);
+    console.log(status);
+ 
+    if (status) {
+        res.send({ "status": true, "message": "Movie added successfully" });
+    } else {
+        res.send({ "status": false, "message": "Error creating user" });
+    }
+}
+catch(err)
+{
+    console.log(err);
+}
+}
+var updateStudentController = async (req, res) =>
+{
+    console.log(req.params.id);
+    console.log(req.body);
+    
+    var result = await studentService.updateStudentDBService(req.params.id,req.body);
+ 
+     if (result) {
+        res.send({ "status": true, "message": "Movie Updated"} );
+     } else {
+         res.send({ "status": false, "message": "Movie Updated Failed" });
+     }
+}
+
+var deleteStudentController = async (req, res) =>
+{
+     console.log(req.params.id);
+     var result = await studentService.removeStudentDBService(req.params.id);
+     if (result) {
+        res.send({ "status": true, "message": "User Deleteddd"} );
+     } else {
+         res.send({ "status": false, "message": "User Deleteddd Faileddddddd" });
+     }
+}
+var getDataConntrollerfn = async (req, res) =>
+{
+    var empolyee = await studentService.getDataFromDBService();
+    res.send({ "status": true, "data": empolyee });
+}
+
+module.exports = { createStudentControllerFn, updateStudentController,deleteStudentController,getDataConntrollerfn}

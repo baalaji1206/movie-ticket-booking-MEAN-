@@ -1,0 +1,76 @@
+<!-- <form>
+<label> Select Movie Name:</label>
+<select formControlName="dropdownValue2" name="not" [(ngModel)]="disp.val" >
+  <option  id="5" value="Joker" >Joker</option>  
+</select>
+<label> Select Date:</label>
+       <select formControlName="newDropValue" name="sdate"  [(ngModel)]="dates">
+        <option  id="5" value="17 April" >17 April</option>
+        <option id="6" value="18 April">18 April</option>
+        <option id="7" value="19 April">19 April</option>
+        <option id="8" value="20 April">20 April</option>
+      </select>
+      <input type="submit" (click)="submit()"/>
+    </form>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Show Time</th>
+        <th scope="col">Row</th>
+        <th scope="col">No.Of.Tickets</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let item of movielist" >
+            <tr>
+                <td>{{item.name}}</td>
+                <td>{{item.stime}}</td>
+                <td>{{item.row}}</td>
+                <td>{{item.not}}</td>
+               
+            </tr>
+            </ng-container>
+  </table>
+  
+
+      
+        
+     
+          
+ -->
+ <button routerLink="/admin">&lt;-go home</button>
+ <form #ticket="ngForm" class="register-form" id="login-form"  (ngSubmit)="submit(ticket.value)" autocomplete="off">
+ <select name="role" id=""  [(ngModel)]="data.sdate" style="font-size: 16px;">
+  <option value="17 April">17 april</option>
+  <option value="18 April">18 April</option>
+  <option value="19 April">19 April</option>
+  <option value="20 April">20 April</option>
+</select>
+<select name="role" id=""  [(ngModel)]="data.movie" style="font-size: 16px;">
+  <option value="Joker">Joker</option>
+  <option value="Dune">Dune</option>
+  <option value="Phantom">Phantom</option>
+</select>
+<input type="submit" />
+</form>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Show time</th>
+      <th scope="col">Row</th>
+      <th scope="col">No tickets</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let Item of list">
+      <td>{{Item.name }}</td>
+      <td>{{Item.stime }}</td>
+      <td>{{Item.row }}</td>
+      <td>{{Item.not }}</td>
+    </tr>          
+  </tbody>
+</table>

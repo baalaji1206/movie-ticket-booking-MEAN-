@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<body>
+ <div class="navbar">
+    
+      </div>
+    <div class="center">
+      <h1>Login</h1>
+      <form method="post">
+        <div class="txt_field">
+          <input type="text" [(ngModel)]="email" [ngModelOptions]="{standalone: true}"  id="stname" >
+          <span></span>
+          <label>Username</label>
+        </div>
+        <div class="txt_field">
+          <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}"  id="stname" >
+          <span></span>
+          <label>Password</label>
+        </div>
+        
+        <input type="submit" value="Login" (click)="login()" >
+        <div class="signup_link">
+          Not a member? <a  href="javascript:void(0);" routerLink="/register">Signup</a>
+        </div>
+      </form>
+    </div>
+</body>

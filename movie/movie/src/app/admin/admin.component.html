@@ -1,0 +1,85 @@
+   <div class="container-fluid">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+        <div class="container-fluid">
+          <a class="navbar-brand" >Admin - Movie Managment</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+         
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <a class="nav-link" routerLink="/tickets">Sold Tickets</a>
+          </div>
+          
+        </div>
+    </nav>   
+
+
+
+  
+  <div class="container mt-4" >
+    <div class="card">
+            <h3>Add Movie</h3>
+<form>
+    <div class="form-group">
+     
+      <input type="text" [(ngModel)]="name" [ngModelOptions]="{standalone: true}"  class="form-control" id="name" placeholder=" Name"> 
+    </div>
+
+    <div class="form-group">
+ 
+        <input type="text" class="form-control"  [(ngModel)]="screen" [ngModelOptions]="{standalone: true}" id="address" placeholder="Screen"> 
+      </div>
+
+      <div class="form-group">
+  
+        <input type="text" class="form-control" [(ngModel)]="ticket" [ngModelOptions]="{standalone: true}" id="phone" placeholder="Ticket"> 
+      </div>
+      <div class="form-group">
+  
+        <input type="text" class="form-control" [(ngModel)]="path" [ngModelOptions]="{standalone: true}" id="phone" placeholder="Image path"> 
+      </div>
+    <button type="submit" (click)="submit()" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+</div>
+
+<div class="container mt-4" >
+    <div class="card">
+<div class="container mt-4" >
+ <h5>Movie Table</h5>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Movie Name</th>
+        <th scope="col">Screen</th>
+        <th scope="col">Tickets</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let Item of movie">
+            <td>{{Item._id}}</td>
+        <td>{{Item.name }}</td>
+        <td>{{Item.screen }}</td>
+        <td>{{Item.ticket }}</td>
+        
+
+        <td>
+          <button type="button" class="btn btn-success" (click)="setUpdate(Item)">Edit</button>&nbsp;
+          &nbsp;
+          <button type="button" class="btn btn-danger" (click)="setDelete(Item)">Delete</button>   
+         
+           
+        </td>
+      </tr>          
+    </tbody>
+  </table>
+</div>
+</div>

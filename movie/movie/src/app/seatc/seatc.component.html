@@ -1,0 +1,57 @@
+<body>
+    <div class="Row" style="width: 18rem;">
+      <div class="column">
+      <img src="assets/img/12.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+       
+      </div>
+    </div>
+  </div>
+  <div class="input">
+  
+  
+  </div>
+    <form [formGroup]="form" class="movie-container" (ngSubmit)="onSubmit()">
+      <div>
+        <label>No.Of.Tickets :</label>
+        <select formControlName="dropdownValue2" name="not" ngModel>
+          <option  id="5" value="1" >1</option>
+          <option id="6" value="2">2</option>
+          <option id="7" value="3">3</option>
+          <option id="8" value="4">4</option>
+        </select>
+      </div>
+      <div >
+      <label> Select Row:</label>
+       <select formControlName="dropdownValue1" name="row" ngModel>
+         <option  id="5" value="A">A</option>
+         <option id="6" value="B">B</option>
+         <option id="7" value="C">C</option>
+         <option id="8" value="D">D</option>
+       </select>
+    </div>
+    
+      <div>
+        <label> Select Time:</label>
+      <select formControlName="dropdownValue" name="stime" ngModel>
+        <option  id="5" value="11:00 AM" >11:00 AM</option>
+        <option id="6" value="2.00 PM">2.00 PM</option>
+        <option id="7" value="6.00 PM">6.00 PM</option>
+        <option id="8" value="10:00 PM">10:00 PM</option>
+      </select>
+      </div>
+      <div>
+        <label> Select Date:</label>
+         <select formControlName="newDropValue" name="sdate" ngModel>
+          <option  id="5" value="17 April" >17 April</option>
+          <option id="6" value="18 April">18 April</option>
+          <option id="7" value="19 April">19 April</option>
+          <option id="8" value="20 April">20 April</option>
+        </select>
+        </div>  
+    </form>
+  
+    
+              <div class="button">
+      <button type="button" class="btn btn-primary btn-lg"  (click)="save()">Book Ticket</button>
+    </div> 

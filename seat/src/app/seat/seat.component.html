@@ -1,0 +1,30 @@
+
+  <form class="movie-container" action="POST">
+    <label> Select Show time :</label>
+    <select id="movie">
+      <option id="1" value="11:00 AM" [(ngModel)]="sdate" [ngModelOptions]="{standalone: true}" >11:00 AM</option>
+      <option id="2" value="11:00 AM"  [(ngModel)]="sdate" [ngModelOptions]="{standalone: true}">3:00 PM</option>
+      <option id="3" value="11:00 AM" [(ngModel)]="sdate" [ngModelOptions]="{standalone: true}">7:00 PM</option>
+      <option id="4" value="11:00 AM" [(ngModel)]="sdate" [ngModelOptions]="{standalone: true}">10:30 PM</option>
+    </select>
+  </form>
+  <form class="movie-container1" action="POST">
+    <label> Select Date :</label>
+    <select id="movie">
+      <option  id="5" value="11:00 AM" [(ngModel)]="stime" [ngModelOptions]="{standalone: true}">17 April</option>
+      <option id="6" value="11:00 AM"[(ngModel)]="stime" [ngModelOptions]="{standalone: true}">18 April</option>
+      <option id="7" value="11:00 AM"[(ngModel)]="stime" [ngModelOptions]="{standalone: true}">19 April</option>
+      <option id="8" value="11:00 AM"[(ngModel)]="stime" [ngModelOptions]="{standalone: true}">20 April</option>
+    </select>
+  </form>
+  <form class="movie-container2" action="POST">
+    <label> Select Row:</label>
+    <select id="movie">
+      <option id="9" value="A" [(ngModel)]="row" [ngModelOptions]="{standalone: true}">A</option>
+      <option id="10" value="B"[(ngModel)]="row" [ngModelOptions]="{standalone: true}">B</option>
+      <option id="11" value="C"[(ngModel)]="row" [ngModelOptions]="{standalone: true}">C</option>
+      
+      
+    </select>
+  </form>
+  <button type="button" class="btn btn-primary btn-lg" (click)="save()" >Book Ticket</button>
